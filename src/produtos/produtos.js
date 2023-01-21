@@ -23,7 +23,7 @@ const produtos= [{
 {   
     foto:<img src={imagem2}/>,
     id: "2",
-    nome: "ASTRONALTA",
+    nome: "ASTRONAUTA",
     valor: 40,
     botao: <ButtonStyle>comprar</ButtonStyle>
 },
@@ -37,7 +37,7 @@ const produtos= [{
 {   
     foto: <img src={imagem4}/>,
     id: "4",
-    nome: "JUPTER",
+    nome: "JÚPITER",
     valor: 35,
     botao: <ButtonStyle>comprar</ButtonStyle>
 },

@@ -15,7 +15,7 @@ row-gap:15px;
 
 `
 
-export const ButtonStyle = styled.button`
+export const SelectStyle = styled.select`
 background-color: gray;
 padding: 1.5%;
 border: solid 1px white;
