@@ -1,34 +1,52 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import produtos from "../../produtos/produtos";
 import InputBusca from "../input/InputBusca";
 import { ConteinerStyle, CamisetaStyle } from "./style";
 
 
-function HomePage (props){
-    const [busca, setBusca] = useState("")
+function HomePage ({busca,setBusca, menorValor, maiorValor, ordenacao}){
 
+  
+    const onChangeBusca =(event)=>{
+        setBusca(event.target.value)
+    }
+        
 
-    // ISSO ABAIXO TERÁ DE MUDAR DE COMPONENTE, PORQUE É A FUNÇÃO DO ONCLICK DE CADA BOTÃO DO CARD DE PRODUTO 
-    //VOU TER QUE COLOCAR NO DOCUMENTO "PRODUTOS"
-
-    // const buscar = () => {
-    //     const buscarCamiseta = props.comprar
-    //     console.log(buscarCamiseta)
-    // }
-
-    const listaDeProdutos = produtos.map(
-        (item)=>
-        <CamisetaStyle>{item.nome} {item.foto} {item.valor} {item.botao}  </CamisetaStyle>
+    const listaDeProdutos = produtos
+        .filter((item)=>{
+            return item.valor >= menorValor || menorValor === ""
+        })
+        .filter((item)=>{
+            return item.valor <= maiorValor || maiorValor === ""
+        })
+        .filter((item)=>{
+            return item.nome.toLowerCase().includes(busca.toLowerCase())
+        })
+        .sort((valorAtual, proximoValor)=>{
+            switch(ordenacao){
+                case "asc":
+                    return valorAtual.valor - proximoValor.valor
+                case "desc":
+                    return proximoValor.valor - valorAtual.valor 
+                default:
+                    return valorAtual.nome.localeCompare(proximoValor.nome)
+            }
+        })
+        .map((item)=>
+        <CamisetaStyle> {item.nome} {item.foto} {item.valor} {item.botao}  </CamisetaStyle>
     )
 
     return(
         
         <div>
-         <InputBusca busca={busca}  setBusca={setBusca}></InputBusca> 
+         <InputBusca 
+         busca = {busca}
+         onChangeBusca= {onChangeBusca}/>
         <ConteinerStyle>{listaDeProdutos}</ConteinerStyle>
         </div>
     )
 }
+
 
 export default HomePage
 

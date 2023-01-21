@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.js": "/static/js/main.edf42e9e.js",
+    "static/media/astronalta.png": "/static/media/astronalta.a049b43cb207bc5f2ce4.png",
+    "static/media/terra.png": "/static/media/terra.af059019a941c3129562.png",
+    "static/media/extraterrestre.png": "/static/media/extraterrestre.6c1327209593c6cf5157.png",
+    "static/media/nave2.png": "/static/media/nave2.89ca7b1a5f7f4c63f97b.png",
+    "static/media/plutao.png": "/static/media/plutao.3a9879fe7acb1097dc9e.png",
+    "static/media/lua.png": "/static/media/lua.fcf4ef6e5383bfb3026c.png",
+    "static/media/jupter.png": "/static/media/jupter.e4ef25896edccf9b3f8d.png",
+    "static/media/marte.png": "/static/media/marte.0c8dd5e112cf957c8f51.png",
+    "static/media/alienigena.png": "/static/media/alienigena.af1ac33c7070db178878.png",
+    "static/media/netuno.png": "/static/media/netuno.8008a2790e4bb89f2f28.png",
+    "static/media/nave1.png": "/static/media/nave1.f55ba771d14eb418bff8.png",
+    "static/media/mercurio.png": "/static/media/mercurio.fe5607e51bba01fbf19d.png",
+    "static/media/foguete.png": "/static/media/foguete.35d60ce5e64f31a6d6e9.png",
+    "index.html": "/index.html",
+    "main.edf42e9e.js.map": "/static/js/main.edf42e9e.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.edf42e9e.js"
+  ]
+}

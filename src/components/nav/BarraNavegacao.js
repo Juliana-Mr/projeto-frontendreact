@@ -1,47 +1,51 @@
-import React, { useState } from "react";
-import { BarraNavegacaoStyle, ButtonStyle } from "./style";
+import React from "react";
+import { BarraNavegacaoStyle, SelectStyle } from "./style";
 
-function BarraNavegacao (){
-
-    const [menor, setMenor] = useState("")
-    const [maior, setMaior] = useState("")
+function BarraNavegacao ({menorValor, setMenorValor,maiorValor,setMaiorValor,ordenacao, setOrdenacao}){
 
 
-    const onChangeMenorPreco =(event)=> {
-        setMenor(event.target.value)
-    } 
- 
-    const onChangeMaiorPreco = (event)=>{
-        setMaior(event.target.value)
-    } 
-
-    const filtrarMenorValor = () =>{
-        const menorValor = menor
-        console.log(menorValor)
-        setMenor("")
+    const onChangeMenor = (event) => {
+        setMenorValor(event.target.value)
     }
 
-    const filtrarMaiorValor = () => {
-        const maiorValor = maior
-        console.log(maiorValor)
-        setMaior("")
+    const onChangeMaior = (event) => {
+        setMaiorValor(event.target.value)
     }
 
+    const onChangeOrdenacao =(event) => {
+        setOrdenacao(event.target.value)
+    }
 
     return(
         <BarraNavegacaoStyle>
             FILTRAR POR:
             <label>
             menor preço
-            <input onChange={onChangeMenorPreco} value={menor}/>
+            <input
+            type = "number"
+            onChange={onChangeMenor}
+            value={menorValor}
+            />
             </label>
-            <ButtonStyle onClick={filtrarMenorValor}>filtrar</ButtonStyle>
             <label>
             maior preço
-            <input onChange={onChangeMaiorPreco} value={maior}/>
+            <input
+            type = "number"
+            onChange={onChangeMaior}
+            value={maiorValor}
+            />
             </label>
-            <ButtonStyle onClick={filtrarMaiorValor}>filtrar</ButtonStyle>
-           
+            ordenação
+            <label>
+            <SelectStyle
+            value={ordenacao}
+            onChange={onChangeOrdenacao}
+            >
+            <option value={"asc"}>Crescente</option>
+            <option value={"desc"}>Decrescente</option>
+            <option value={"title"}>Alfabética</option>
+            </SelectStyle>
+           </label>
         
         </BarraNavegacaoStyle>
     )

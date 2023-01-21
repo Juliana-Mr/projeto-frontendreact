@@ -14,9 +14,3 @@ export const InputBuscaStyle= styled.label`
     
 `
 
-export const ButtonStyle = styled.button`
-background-color: gray;
-padding: 0.5%;
-border: solid 1px white;
-border-radius: 10px;
-`

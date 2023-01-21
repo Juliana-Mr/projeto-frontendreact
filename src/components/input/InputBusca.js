@@ -1,30 +1,16 @@
-// import React, { useState } from "react";
-import { InputBuscaStyle, ButtonStyle } from "./style";
+import { InputBuscaStyle} from "./style";
 import React from "react";
 
 
-function InputBusca(props){
-
-// console.log(props)
-// const [busca, setBusca] = useState("")
-
-    const onChangeBusca= (event)=>{
-        props.setBusca(event.target.value)
-    }
-
-    const buscar= () => {
-        const buscarItem = props.busca
-        console.log(buscarItem)
-        props.setBusca("")
-    }
-
+function InputBusca({busca,onChangeBusca}){
 
     return(
         <>
         <InputBuscaStyle>
         O QUE VOCÊ PROCURA?
-        <input onChange={onChangeBusca} value={props.busca}/>
-        <ButtonStyle onClick={buscar}>buscar</ButtonStyle>
+        <input 
+        onChange={onChangeBusca} 
+        value={busca}/>
         </InputBuscaStyle>
        
         </>
